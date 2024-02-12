@@ -6,7 +6,7 @@
     
         if (obj.yesNo(age)==true)
         {
-            System.out.println("Allowed");
+            System.out.println("This is Allowed");
 
         }
         else{
