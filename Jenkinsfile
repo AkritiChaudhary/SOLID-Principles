@@ -1,40 +1,13 @@
 pipeline {
+    agent any
 
-
-
-
-agent any
-
-
-stages {
-
-
-	stage('build')
-
-
-		{
-
-
-			steps	{
-
-
-					bat 'npm install typescript'
-
-
-					bat 'npm install cypress --save-dev'              
-
-
-					bat 'npm run cypress:run'
-
-
-				}
-
-
-       	}
-
-
-	}	
-
-
+    stages {
+        stage('Build') {
+            steps {
+                // Compile and run Java code
+                bat 'javac -sourcepath src -d out src/SingleResponsibility.java'
+                bat 'java -cp out SingleResponsibility'
+            }
+        }
+    }
 }
-
