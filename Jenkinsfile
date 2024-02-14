@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    
-                    if (isLinux()) {
+                     if (isUnix()) {
                         sh 'echo "Hello World"'
                     } else {
                         bat 'echo "Hello World"'
