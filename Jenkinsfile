@@ -4,13 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'echo "Hello World"'
-                    } else {
-                        bat 'echo "Hello World"'
-                    }
-                }
+                // Compile and run Java code
+                sh 'javac -sourcepath src -d out SingleResponsibility/Main.java'
+                sh 'java -cp out SingleResponsibility'
             }
         }
     }
