@@ -4,9 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Compile and run Java code- Sample
-                bat 'javac -sourcepath src -d out SingleResponsibility/Main.java'
-                bat 'java -cp out SingleResponsibility'
+                script {
+                    // Run Windows-specific steps
+                    if (isUnix()) {
+                        sh 'echo "Hello World"'
+                    } else {
+                        bat 'echo "Hello World"'
+                    }
+                }
             }
         }
     }
