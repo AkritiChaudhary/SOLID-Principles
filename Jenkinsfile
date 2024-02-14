@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    /
+                    
                     if (isLinux()) {
                         sh 'echo "Hello World"'
                     } else {
